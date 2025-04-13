@@ -1,0 +1,36 @@
+#
+#       $ sudo loginctl enable-linger username
+#       $ loginctl show-user chouette
+#
+#       $ vi scd41.service
+#
+#       $ systemctl --user enable scd41
+#
+#       $ systemctl --user start scd41
+#       $ systemctl --user status scd41
+#       $ systemctl --user stop scd41
+#
+#       $ vi scd41.service
+#       $ systemctl --user daemon-reload
+#
+#       $ systemctl --user start scd41
+#       ...
+#
+#       $ systemctl --user stop scd41
+#       $ systemctl --user disable scd41
+#
+[Unit]
+Description=scd41
+#After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=env DBNAME=showroom DBUSER=iapetus DBPW=dgn895-- /home/orangepi/MyProject/Measurements/scd41/scd41 >> scd41.log 2>> scd41.err
+
+WorkingDirectory=/home/orangepi/MyProject/Measurements/scd41
+KillMode=process
+Restart=always
+
+
+[Install]
+WantedBy=default.target

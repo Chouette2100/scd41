@@ -44,9 +44,10 @@ import (
 /*
 000100	新規作成
 000200	シグナルハンドリング機能を追加する
+000201	scd41.serviceを追加する
 */
 
-const Version = "000200"
+const Version = "000201"
 
 var Logfile *os.File
 
