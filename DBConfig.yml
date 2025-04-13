@@ -1,0 +1,17 @@
+# リモートと接続するときSSHを使うか？
+# 指定しなければ使用しない（false）
+#UseSSH: true
+#
+#DBhost: 127.0.0.1
+#DBport: 9999
+#
+## DBサーバーのホスト名、指定しなければlocalhost
+#DBhost:
+# データベース名
+DBname: ${DBNAME}
+#DBport: 3306
+#
+#
+# ログイン名とパスワードは環境変数で渡す
+DBuser:	${DBUSER}
+DBpswd: ${DBPW}
